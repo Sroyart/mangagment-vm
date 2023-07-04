@@ -18,13 +18,13 @@ type Props = {
     email: string;
     password: string;
   }) => void;
-  signupSchema: any;
+  signUpSchema: any;
 };
 
 const Form: React.FC<Props> = ({
   children,
   handleFormSubmit,
-  signupSchema,
+  signUpSchema,
 }) => {
   const [error, setError] = useState(false);
 
@@ -33,7 +33,7 @@ const Form: React.FC<Props> = ({
       <Formik
         initialValues={initialValues}
         onSubmit={handleFormSubmit}
-        validationSchema={signupSchema}
+        validationSchema={signUpSchema}
       >
         {({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className="space-y-6">

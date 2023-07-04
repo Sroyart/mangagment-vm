@@ -1,32 +1,12 @@
 import React from "react";
 
-type Props = {
-  type: "button" | "submit" | "reset";
-  className?: string;
-  children: React.ReactNode;
-  onSubmit?: (e: React.FormEvent<HTMLButtonElement>) => void;
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-};
-
-const Button: React.FC<Props> = ({
-  children,
-  onClick,
-  onSubmit,
-  type,
-  className,
-}) => {
+const Button = (props) => {
   return (
     <button
-      type={type}
-      className={
-        "mt-4 cursor-pointer bg-sky-900 px-2 py-1.5 text-lg font-bold text-white active:bg-sky-800" +
-        className
-      }
-      onSubmit={onSubmit}
-      onClick={onClick}
-    >
-      {children}
-    </button>
+      {...props}
+      className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${props.color} bg-indigo-600`}
+      type="submit"
+    />
   );
 };
 
