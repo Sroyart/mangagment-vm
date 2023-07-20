@@ -1,7 +1,7 @@
 "use client";
 
 import * as Yup from "yup";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Form from "@/app/components/Form";
@@ -43,7 +43,7 @@ const SignUpSchema = Yup.object().shape({
 });
 
 const Page = () => {
-  // const router = useRouter();
+  const router = useRouter();
   // @ts-ignore
   const { login, jwt } = useContext(AppContext);
   const [loading, setLoading] = useState(false);
@@ -51,7 +51,8 @@ const Page = () => {
   const handleFormSubmit = ({ email, password }) => {
     for (let item of loginItem) {
       if (item.email === email && item.password === password) {
-        login("JWT");
+        login(email);
+        router.push("/");
         return;
       }
       console.log("failed");
@@ -64,6 +65,12 @@ const Page = () => {
     // login("JWT");
     // router.push("/");
   };
+
+  useEffect(() => {
+    if (jwt) {
+      router.push("/");
+    }
+  }, []);
 
   // const handleSubmit = ({ email, password }) => {};
 
