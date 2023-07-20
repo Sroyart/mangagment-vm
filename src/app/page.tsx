@@ -264,13 +264,18 @@ export default function Home() {
           </Button>
         )}
       </div>
-      {timer !== "10:00" && timer !== "00:00" && (
+      {/* {timer !== "10:00" && timer !== "00:00" && ( */}
+      {true && (
         <>
           <div>
             <span className="font-bold">{`La VM a été créée.`}</span>
           </div>
           <div>
-            <span>{`Elle sera supprimée dans : <b>${timer}</b>.`}</span>
+            <span>
+              {`Elle sera supprimée dans : `}
+              <strong className="text-red-600">{timer}</strong>
+              {"."}
+            </span>
           </div>
         </>
       )}
