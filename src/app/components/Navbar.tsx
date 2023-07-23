@@ -79,16 +79,6 @@ const Navbar = () => {
                 </div>
               </div>
             )}
-
-            <button
-              className=" text-dark block px-3 py-1 leading-none outline-none focus:outline-none md:hidden"
-              type="button"
-              onClick={burger ? closeBothDropdown : () => setBurger(true)}
-            >
-              <IconContext.Provider value={{ size: "40px" }}>
-                {burger ? <IoCloseOutline /> : <IoMenuOutline />}
-              </IconContext.Provider>
-            </button>
           </div>
         ) : (
           <></>
