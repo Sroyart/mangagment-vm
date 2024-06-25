@@ -1,13 +1,6 @@
 "use client";
 import Button from "@/app/components/Button";
 import { useState, useRef, useEffect, useContext } from "react";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
 import { AppContext } from "@/app/context/AppContext";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { MyVm } from "@/app/types/Vm";
